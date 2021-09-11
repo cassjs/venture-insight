@@ -1,7 +1,53 @@
 {% extends "base.html" %}
 {% block title %}Dashboard |{% endblock %}
 {% block content %}
-    <div>
-        <h1>Company Info</h1>
+    
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark1 justify-content-between">
+    <img class="navbar-brand" src="/static/images/logotransparent.png" alt="">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Dashboard </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        
+      </ul>
+      
+      
+      
+      
     </div>
+    <div class="nav navbar-nav navbar-right buttonRight">
+        <ul class="nav navbar-nav navbar-right">             
+            <li style="align-content:center">
+                <button type="submit" class="btn btn-success2" >Logout</button>
+            </li>
+        </ul>
+      </div>
+  </nav>
+
+
+  <div class="centerContent">
+    <div class="container1">
+        
+
+        <center><img class="moneyIcon" src="/static/images/moneyIcon.PNG" alt=""></center>
+           
+            <center><h2 class="profileDescription">Google</h2></center>
+          
+        
+           <center><p class="profileDescription">The description will go here for the company along with other information about revenue.</p></center> 
+           <center><button class="profileButton">Add to Favorites</button></center>
+
+    </div>
+  </div>
+   
+
+
 {% endblock %}

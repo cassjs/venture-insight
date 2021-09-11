@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 
@@ -6,16 +5,86 @@
 	box-sizing: border-box;
 }
 
+.profileButton {
+	margin-top: 30px;
+	background-color: #28B78D;
+	border: none;
+}
+
+.profileButton:hover {
+	background-color: #172C62;
+	border: none;
+}
+
+.avatar {
+	width: 50%;
+}
+
+.moneyIcon {
+	margin-top:20px;
+	margin-bottom: 20px;
+	width: 20%;
+}
+
+.btn-success1{
+	background-color: #28B78D;
+	border: none;
+}
+
+.btn-success1:hover{
+	background-color: #172C62;
+}
+
+.btn-success2{
+	background-color: #28B78D;
+	border: none;
+	align-content: right;
+}
+
+.btn-success2:hover{
+	background-color: #FFFFFF;
+	color: #28B78D;
+}
+
+.btn-success3{
+	margin-left: 10px;
+	background-color: #28B78D;
+	border: none;
+}
+
+.btn-success3:hover{
+	background-color: #172C62;
+	color: white;
+}
+
+.buttonRight {
+	padding-right: 30px;
+
+}
+.bg-dark1 {
+	background: -webkit-linear-gradient(to bottom, #172C62, #047391);
+	background: linear-gradient(to bottom, #172C62, #047391);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.bg-dark2 {
+	padding: 30px;
+	border-top: #28B78D 3px solid;
+}
 
 body {
 	background: #f6f5f7;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
-	margin: -20px 0 50px;
+	
+}
+
+.ticket-container {
+	width: 500px;
 }
 
 h1 {
@@ -27,12 +96,16 @@ h2 {
 	text-align: center;
 }
 
+.text-light1{
+	color: #172C62;
+}
 p {
 	font-size: 14px;
 	font-weight: 100;
 	line-height: 20px;
 	letter-spacing: 0.5px;
 	margin: 20px 0 30px;
+	text-align: center;
 }
 
 span {
@@ -65,6 +138,7 @@ button.signIn {
 
 button.signIn:hover {
     background-color: #28B78D;
+	border:none;
 }
 
 button:active {
@@ -81,9 +155,10 @@ button.ghost {
 }
 button.ghost:hover {
     background-color: #28B78D;
+	border: none;
 }
 
-form {
+.formRegister{
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
@@ -94,12 +169,34 @@ form {
 	text-align: center;
 }
 
+.search {
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.mr-sm-1{
+	width: 500px;
+}
+
+.formLine {
+	display: flex;
+	align-items: center;
+	
+}
+
 input {
 	background-color: #eee;
 	border: none;
 	padding: 12px 15px;
 	margin: 8px 0;
 	width: 100%;
+}
+
+.homeDescription {
+	color: white;
 }
 
 .loginInput {
@@ -114,7 +211,44 @@ input {
     margin-bottom: 40px;
 }
 
-.container {
+.homeButton {
+	margin-top: 30px;
+}
+
+.centerContent {
+	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.containerHome {
+	background: #172C62;
+	background: -webkit-linear-gradient(to bottom, #172C62, #047391);
+	background: linear-gradient(to bottom, #172C62, #047391);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100vh;
+	min-height: 480px;
+	
+}
+
+.btn-danger{
+	margin-left: 10px;
+
+}
+
+.navbar-brand {
+	height: 120px;
+}
+
+.container1 {
 	background-color: #fff;
 	border-radius: 10px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
@@ -124,6 +258,7 @@ input {
 	width: 768px;
 	max-width: 100%;
 	min-height: 480px;
+	margin-bottom: 30px;
 }
 
 .form-container {
@@ -213,7 +348,7 @@ input {
 }
 
 .overlay2 {
-	background: white
+	background: white;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -224,6 +359,20 @@ input {
 	width: 200%;
   	transform: translateX(0);
 	transition: transform 0.6s ease-in-out;
+}
+
+.overlay3 {
+	background: #28B78D;
+	background: -webkit-linear-gradient(to bottom, #28B78D, #047391);
+	background: linear-gradient(to bottom, #28B78D, #047391);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: #FFFFFF;
+	height: 100%;
+	width: 100%;
+	
+
 }
 
 .container.right-panel-active .overlay {
