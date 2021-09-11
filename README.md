@@ -42,11 +42,12 @@ Navigate to the project folder
       
 * Install Django
 
-      $ ..
+      $ python -m Django install
 
 * Activate Enviornment
 
-      $ ..
+      $ python -m pipenv install
+      $ python -m pipenv shell
       
 * Run Application
 
