@@ -1,6 +1,6 @@
 # Venture Insight
 
-Project description here
+This is a crowdfunding platform that aggregates info about startups so that everyday individuals can invest in early-stage companies they're interested in.
 
 ## Build
 
