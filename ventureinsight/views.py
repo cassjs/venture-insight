@@ -15,7 +15,7 @@ def signup(request):
         except User.DoesNotExist:
             user = User.objects.create_user(request.POST['email'],password=request.POST['password'])
             auth.login(request,user)
-            return redirect('/ventureinsight/home/')
+            return redirect('/ventureinsight/login/')
     else:
         return render(request, 'signup.html')  
 
