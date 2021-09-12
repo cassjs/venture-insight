@@ -1,6 +1,8 @@
 # Venture Insight
 
-This is a crowdfunding platform that aggregates info about startups so that everyday individuals can invest in early-stage companies they're interested in.
+This is a crowdfunding platform that aggregates information about startups into one hub.
+
+It draws from multiple funding information sources and uses a simple user interface, enabling everyday individuals to invest in early-stage companies that they are interested in.
 
 ## Build
 
