@@ -9,7 +9,8 @@
         <div class="form-container sign-up-container">
         </div>
         <div class="form-container sign-in-container">
-            <form class="formRegister" action="#">
+            <form method="POST" class="formRegister" action="{% url 'login' %}">
+                {% csrf_token %}
                 <h1 class="headerSpace">Welcome back</h1>
                 <input class="loginInput" type="email" placeholder="Email" />
                 <input class="loginInput" type="password" placeholder="Password" />

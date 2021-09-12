@@ -4,11 +4,12 @@
     <div class=centerContent>
         <div class="container1" id="container1">
             <div class="form-container sign-in-container">
-                <form class="overlay1 formRegister" action="#">
+                <form method="POST" class="overlay1 formRegister" action="{% url 'signup' %}">
+                    {% csrf_token %}
                     <h1 class="headerSpace">Start your journey</h1>
-                    <input class="loginInput" type="email" placeholder="Email" />
-                    <input class="loginInput" type="password" placeholder="Password" />
-                    <button class="signIn">Sign Up</button>
+                    <input class="loginInput" type="email" placeholder="Email" name="email" />
+                    <input class="loginInput" type="password" placeholder="Password" name="password" />
+                    <button class="signIn" name="Create User">Sign Up</button>
                 </form>
             </div>
             <div class="overlay-container">
