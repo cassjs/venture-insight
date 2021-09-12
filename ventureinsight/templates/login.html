@@ -12,11 +12,14 @@
             <form method="POST" class="formRegister" action="/ventureinsight/login/">
                 {% csrf_token %}
                 <h1 class="headerSpace">Welcome back</h1>
-                <input class="loginInput" type="email" placeholder="Email" />
-                <input class="loginInput" type="password" placeholder="Password" />
+                <input class="loginInput" type="email" placeholder="Email" name="email" />
+                <input class="loginInput" type="password" placeholder="Password" name="password" />
                 <a href="#">Forgot your password?</a>
                 <button class="signIn">Sign In</button>
+                <h6>{{ error }}</h6>
             </form>
+            
+
         </div>
         <div class="overlay-container">
             <div class="overlay">
@@ -24,7 +27,7 @@
                     <img class="logoblue" src="/static/images/logotransparent.png" alt="logo">
                     <h1>Hello, Friend!</h1>
                     <p class="space">Start your journey with us</p>
-                    <button class="ghost">Sign Up</button>
+                    <a href="/ventureinsight/signup"><button class="ghost">Sign Up</button></a>
                 </div>
             </div>
         </div>

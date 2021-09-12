@@ -10,10 +10,10 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Dashboard </a>
+          <a class="nav-link" href="/ventureinsight/dashboard">Dashboard </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
+          <a class="nav-link" href="/ventureinsight/profile">Profile</a>
         </li>
         
       </ul>
@@ -25,7 +25,7 @@
     <div class="nav navbar-nav navbar-right buttonRight">
         <ul class="nav navbar-nav navbar-right">             
             <li style="align-content:center">
-                <button type="submit" class="btn btn-success2" >Logout</button>
+              <button type="submit" onclick="location.href='/ventureinsight/logout'" class="btn btn-success2" >Logout</button>
             </li>
         </ul>
       </div>
@@ -42,7 +42,7 @@
             <center><h2 class="profileDescription">Welcome!</h2></center>
           
         
-           <center><p class="profileDescription">email@gmail.com</p></center> 
+           <center><p class="profileDescription">{{ user.username }}</p></center> 
            <center><button class="profileButton" id="signUp">Compare StartUps</button></center>
 
 
@@ -68,7 +68,7 @@
           <button class="delete-ticker col-lg-1 p-4 btn-success1">
               Learn More
           </button>
-          <button class="delete-ticker col-lg-1 p-4 btn-danger">
+          <button class="delete-ticker col-lg-1 p-4 btn-danger" onclick="location.href='/ventureinsight/dashboard'">
             Remove Item
         </button>
         </div>
@@ -92,7 +92,7 @@
           <button class="delete-ticker col-lg-1 p-4 btn-success1">
               Learn More
           </button>
-          <button class="delete-ticker col-lg-1 p-4 btn-danger">
+          <button class="delete-ticker col-lg-1 p-4 btn-danger" onclick="location.href='/ventureinsight/dashboard'">
             Remove Item
         </button>
         </div>

@@ -2,7 +2,7 @@
 {% block title %}Dashboard |{% endblock %}
 {% block content %}
 
-{% if request.user.is.authenticated %}
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark1 justify-content-between">
     <img class="navbar-brand" src="/static/images/logotransparent.png" alt="">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,10 +11,10 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Dashboard </a>
+          <a class="nav-link" href="/ventureinsight/dashboard">Dashboard </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
+          <a class="nav-link" href="/ventureinsight/profile">Profile</a>
         </li>
         
       </ul>
@@ -26,7 +26,7 @@
     <div class="nav navbar-nav navbar-right buttonRight">
         <ul class="nav navbar-nav navbar-right">             
             <li style="align-content:center">
-                <button type="submit" class="btn btn-success2" >Logout</button>
+                <button type="submit" onclick="location.href='/ventureinsight/logout'" class="btn btn-success2" >Logout</button>
             </li>
         </ul>
       </div>
@@ -53,9 +53,9 @@
         <p class="ticker-success">High: $34<br><span class="text-danger">Low: $12}</span></p>
         <p class="text-secondary">Open: $56<br>Prev. close: $45</p>
     </div>
-    <button class="delete-ticker col-lg-1 p-4 btn-success1">
-        Learn More
-    </button>
+    <button class="delete-ticker col-lg-1 p-4 btn-success1" onclick="location.href='/ventureinsight/companyinfo'">
+      Learn More
+  </button>
   </div>
 </div>
 
@@ -78,7 +78,7 @@
           <p class="ticker-success">High: $34<br><span class="text-danger">Low: $12}</span></p>
           <p class="text-secondary">Open: $56<br>Prev. close: $45</p>
       </div>
-      <button class="delete-ticker col-lg-1 p-4 btn-success1">
+      <button class="delete-ticker col-lg-1 p-4 btn-success1" onclick="location.href='/ventureinsight/companyinfo'">
           Learn More
       </button>
     </div>
@@ -86,7 +86,6 @@
 
 
 
-{% else %}
-<a href='login.html'></a>
-{% end if %}
+
+
 {% endblock %}

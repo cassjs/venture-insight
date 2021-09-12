@@ -24,7 +24,7 @@ def login(request):
         user = auth.authenticate(username=request.POST['email'],password = request.POST['password'])
         if user is not None:
             auth.login(request,user)
-            return redirect('home')
+            return redirect('/ventureinsight/dashboard')
         else:
             return render (request,'login.html', {'error':'Username or password is incorrect!'})
     else:
@@ -32,13 +32,28 @@ def login(request):
      
 
 def dashboard(request):
-    return render(request, 'dashboard.html')  
+    if request.user.is_authenticated:
+        return render(request, 'dashboard.html') 
+    else :
+        return redirect('/ventureinsight/login')
 
 def companyinfo(request):
-    return render(request, 'companyinfo.html')  
+    if request.user.is_authenticated:
+        return render(request, 'companyinfo.html')  
+    else :
+        return redirect('/ventureinsight/login')
 
 def profile(request):
-    return render(request, 'profile.html')  
+    if request.user.is_authenticated:
+        return render(request, 'profile.html', {'user' : request.user})  
+    else :
+        return redirect('/ventureinsight/login')
 
 def home(request):
     return render(request, 'home.html') 
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/ventureinsight/home')
+
+    
