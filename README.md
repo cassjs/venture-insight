@@ -12,9 +12,9 @@ It draws from multiple funding information sources and uses a simple user interf
 
 ## **Contributors**
 - Project Lead: Rosanna Mannan
-- Design Lead: Ti
-- Front-end Developer: Zaina
-- Back-end Developer: Jessica Cassidy
+- Design Lead: [Ti K](https://www.linkedin.com/in/ti21/)
+- Frontend and Backend Developer: [Zaina Shawar](https://www.linkedin.com/in/zaina-shawar/) 
+- Back-end Developer: [Jessica Cassidy](https://www.linkedin.com/in/cassjs/)
 
 ## **Getting Started**
 
