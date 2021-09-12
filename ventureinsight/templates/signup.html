@@ -4,7 +4,7 @@
     <div class=centerContent>
         <div class="container1" id="container1">
             <div class="form-container sign-in-container">
-                <form method="POST" class="overlay1 formRegister" action="{% url 'signup' %}">
+                <form method="POST" class="overlay1 formRegister" action="/ventureinsight/signup/">
                     {% csrf_token %}
                     <h1 class="headerSpace">Start your journey</h1>
                     <input class="loginInput" type="email" placeholder="Email" name="email" />

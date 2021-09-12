@@ -10,12 +10,12 @@ def base(request):
 def signup(request):
     if request.method == "POST":
         try:
-            User.objects.get(username = request.POST['username'])
-            return render (request,'accounts/signup.html', {'error':'Username is already taken!'})
+            User.objects.get(username = request.POST['email'])
+            return render (request,'signup.html', {'error':'Username is already taken!'})
         except User.DoesNotExist:
             user = User.objects.create_user(request.POST['email'],password=request.POST['password'])
             auth.login(request,user)
-            return redirect('home')
+            return redirect('/ventureinsight/home/')
     else:
         return render(request, 'signup.html')  
 
