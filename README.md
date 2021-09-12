@@ -18,38 +18,36 @@ It draws from multiple funding information sources and uses a simple user interf
 
 ## **Getting Started**
 
-### **Clone repository**
+* Clone repository
 
-    $ git clone https://github.com/cassjs/venture-insight.git
+      $ git clone https://github.com/cassjs/venture-insight.git
     
-Navigate to the project folder
+* Navigate to the project folder
 
       $ cd venture-insight
-
-### **MacOS Setup**
-
-* Install Django
-
-      $ pipenv install django  
-
-* Activate Enviornment
-
-      $ pipenv shell
       
-* Run Application
+* Create Virtual Enviornment
 
-      $ ./runserver.sh
+      #conda
+      $ conda create -n myenv python=3.8
       
-### **Windows Setup**
+      #venv
+      $ python -m venv myenv
+
+* Activate Virtual Enviornment
+
+      #conda
+      $ conda activate myenv
       
-* Install Django
+      #venv (Windows)
+      $ myenv/Scripts/activate
+      
+      #venv (Mac / Unix / WSL)
+      $ source myenv/bin/activate
+      
+* Install requirements.txt
 
-      $ python -m Django install
-
-* Activate Enviornment
-
-      $ python -m pipenv install
-      $ python -m pipenv shell
+      $ pip install -r requirements.txt
       
 * Run Application
 
