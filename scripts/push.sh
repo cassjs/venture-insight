@@ -1,4 +1,5 @@
 #!/bin/bash
 
 # Push image to Azure container registry
-docker push venture-insight
+docker push ventureinsight.azurecr.io/ventureinsight
+
