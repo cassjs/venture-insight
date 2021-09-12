@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Open browser
-open http://localhost:8000/ventureinsight/login
+open http://localhost:8000/ventureinsight/home
 
 # Run Docker container
 # docker run -v $(pwd):/venture-insight -p 8000:8000 --name ventureinsight ventureinsight
