@@ -1,7 +1,106 @@
 {% extends "base.html" %}
-{% block title %}Dashboard{% endblock %}
+{% block title %}Dashboard |{% endblock %}
 {% block content %}
-    <div>
-        <h1>Profile</h1>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark1 justify-content-between">
+    <img class="navbar-brand" src="/static/images/logotransparent.png" alt="">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/ventureinsight/dashboard">Dashboard </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/ventureinsight/profile">Profile</a>
+        </li>
+        
+      </ul>
+      
+      
+      
+      
     </div>
+    <div class="nav navbar-nav navbar-right buttonRight">
+        <ul class="nav navbar-nav navbar-right">             
+            <li style="align-content:center">
+              <button type="submit" onclick="location.href='/ventureinsight/logout'" class="btn btn-success2" >Logout</button>
+            </li>
+        </ul>
+      </div>
+  </nav>
+
+
+
+
+    <<div class="centerContent">
+        <div class="container1">
+
+            <center><img class="avatar" src="/static/images/avatar.png" alt=""></center>
+           
+            <center><h2 class="profileDescription">Welcome!</h2></center>
+          
+        
+           <center><p class="profileDescription">{{ user.username }}</p></center> 
+           <center><button class="profileButton" onclick="location.href='/ventureinsight/dashboard'">Compare StartUps</button></center>
+
+
+        </div>
+    </div>
+
+    <center><h2 class="profileDescription">Startup Favorites List</h2></center>
+
+    <div class="container pl-4 pr-4 pb-2 pt-2">
+      <div class="card-group d-flex row bg-dark2">
+        <div class="mb-0 p-4 col-md ">
+            <h2 class="text-light1">Gamestar</h2>
+            <p class="text-light1">Streaming games on demand</p>
+            <h2 class="ticker-success">$214</h2>
+        </div>
+        <div class="ticker-graph mb-0 p-4 col-md">
+            <a class="ticker-success" href="https://wefunder.com/gamestar" target="_blank">View Startup</a>
+        </div>
+        <div class="ticker-details mb-0 p-4 col-md">
+            <p class="ticker-success">High: $34<br><span class="text-danger">Low: $12</span></p>
+            <p class="text-secondary">Open: $56<br>Prev. close: $45</p>
+        </div>
+        <button class="delete-ticker col-lg-1 p-4 btn-success1" onclick="location.href='/ventureinsight/companyinfo'">
+          Learn More
+      </button>
+      <button class="delete-ticker col-lg-1 p-4 btn-danger" onclick="location.href='/ventureinsight/dashboard'">
+        Remove Item
+    </button>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="container pl-4 pr-4 pb-2 pt-2">
+        <div class="card-group d-flex row bg-dark2">
+          <div class="mb-0 p-4 col-md ">
+              <h2 class="text-light1">Future Acres</h2>
+              <p class="text-light1">Autonomous farm tools of tomorrow</p>
+              <h2 class="ticker-success">$325</h2>
+          </div>
+          <div class="mb-0 p-4 col-md">
+              <a class="ticker-success" href="https://www.seedinvest.com/future.acres/seed" target="_blank">View Startup</a>
+          </div>
+          <div class="ticker-details mb-0 p-4 col-md">
+              <p class="ticker-success">High: $34<br><span class="text-danger">Low: $12</span></p>
+              <p class="text-secondary">Open: $56<br>Prev. close: $45</p>
+          </div>
+          <button class="delete-ticker col-lg-1 p-4 btn-success1" onclick="location.href='/ventureinsight/companyinfo'">
+              Learn More
+          </button>
+          <button class="delete-ticker col-lg-1 p-4 btn-danger" onclick="location.href='/ventureinsight/dashboard'">
+            Remove Item
+        </button>
+        </div>
+      </div>
+
+    
 {% endblock %}

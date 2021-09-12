@@ -1,7 +1,29 @@
 {% extends "base.html" %}
-{% block title %}Dashboard{% endblock %}
+{% block title %}Dashboard |{% endblock %}
 {% block content %}
-    <div>
-        <h1>Signup</h1>
+    <div class=centerContent>
+        <div class="container1" id="container1">
+            <div class="form-container sign-in-container">
+                <form method="POST" class="overlay1 formRegister" action="/ventureinsight/signup/">
+                    {% csrf_token %}
+                    <h1 class="headerSpace">Start your journey</h1>
+                    <input class="loginInput" type="email" placeholder="Email" name="email" />
+                    <input class="loginInput" type="password" placeholder="Password" name="password" />
+                    <button class="signIn" name="Create User">Sign Up</button>
+                    <h6>{{ error }}</h6>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay2">
+                    <div class="overlay-panel overlay-right">
+                        <img class="logoblue" src="/static/images/logowhite.PNG" alt="logo">
+                        <h1 class="headerSpace">Hello, Friend!</h1>
+                        <p class="headerSpace">Already have an account?</p>
+                        <a href="/ventureinsight/login"><button class="signIn" id="signUp">Login</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
     </div>
 {% endblock %}
