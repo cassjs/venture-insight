@@ -35,6 +35,7 @@ def seedinvest_scrape():
     for i in soup.find_all(class_='highlights'): highlights.append((i.text.replace('\n', '')).strip())
     print(highlights)
     
+    # TODO: Scraping for links broken
     # for i in soup.find_all(class_='thumbnail-hero-image-wrapper'): website_url.get('a')['href']
     # print(website_url)
     
