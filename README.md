@@ -1,20 +1,18 @@
-# Venture Insight
-
+# **Venture Insight**
+ 
 This is a crowdfunding platform that aggregates information about startups into one hub.
 
 It draws from multiple funding information sources and uses a simple user interface, enabling everyday individuals to invest in early-stage companies that they are interested in.
+
+## Hackathon Winner 🏆
+**2021 TechTogether Boston Hackathon** - [Best Data Hack with MassMutual](https://devpost.com/software/venture-insight)
 
 ## Build
 
 - Python
 - Django
 - Bootstrap
-
-## **Contributors**
-- Project Lead: Rosanna Mannan
-- Design Lead: [Ti K](https://www.linkedin.com/in/ti21/)
-- Frontend and Backend Developer: [Zaina Shawar](https://www.linkedin.com/in/zaina-shawar/) 
-- Back-end Developer: [Jessica Cassidy](https://www.linkedin.com/in/cassjs/)
+- Docker
 
 ## **Getting Started**
 
