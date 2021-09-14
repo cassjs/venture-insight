@@ -9,7 +9,7 @@
         <div class="form-container sign-up-container">
         </div>
         <div class="form-container sign-in-container">
-            <form method="POST" class="formRegister" action="/ventureinsight/login/">
+            <form method="POST" class="formRegister" action="/login/">
                 {% csrf_token %}
                 <h1 class="headerSpace">Welcome back</h1>
                 <input class="loginInput" type="email" placeholder="Email" name="email" />
@@ -27,7 +27,7 @@
                     <img class="logoblue" src="/static/images/logotransparent.png" alt="logo">
                     <h1>Hello, Friend!</h1>
                     <p class="space">Start your journey with us</p>
-                    <a href="/ventureinsight/signup"><button class="ghost">Sign Up</button></a>
+                    <a href="/signup"><button class="ghost">Sign Up</button></a>
                 </div>
             </div>
         </div>
