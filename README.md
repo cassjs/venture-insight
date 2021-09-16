@@ -6,7 +6,9 @@ It draws from multiple funding information sources and uses a simple user interf
 
 ## Project Authors
 Jess-Backend
+
 Zaina-Frontend/Backend
+
 Ti-Design/Frontend
 
 ## Hackathon Winner 🏆
