@@ -4,6 +4,11 @@ This is a crowdfunding platform that aggregates information about startups into 
 
 It draws from multiple funding information sources and uses a simple user interface, enabling everyday individuals to invest in early-stage companies that they are interested in.
 
+## Project Authors
+Jess-Backend
+Zaina-Frontend/Backend
+Ti-Design/Frontend
+
 ## Hackathon Winner 🏆
 **2021 TechTogether Boston Hackathon** - [Best Data Hack with MassMutual](https://devpost.com/software/venture-insight)
 
