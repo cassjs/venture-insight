@@ -12,7 +12,7 @@ It draws from multiple funding information sources and uses a simple user interf
 [Ti](https://www.linkedin.com/in/ti21)-Design/Frontend
 
 ## Hackathon Winner 🏆
-**2021 TechTogether Boston Hackathon** - [Best Data Hack with MassMutual](https://devpost.com/software/venture-insight)
+**2021 TechTogether Boston Hackathon** - Best Data Hack with MassMutual
 
 ## Build
 
