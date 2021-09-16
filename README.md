@@ -5,7 +5,7 @@ This is a crowdfunding platform that aggregates information about startups into 
 It draws from multiple funding information sources and uses a simple user interface, enabling everyday individuals to invest in early-stage companies that they are interested in.
 
 ## Project Authors
-Jess-Backend
+Jess-Backend/Repo Owner
 
 Zaina-Frontend/Backend
 
@@ -31,7 +31,7 @@ Ti-Design/Frontend
 
       $ cd venture-insight
       
-* Create Virtual Enviornment
+* Create Virtual Environnment
 
       #conda
       $ conda create -n myenv python=3.8
@@ -39,7 +39,7 @@ Ti-Design/Frontend
       #venv
       $ python -m venv myenv
 
-* Activate Virtual Enviornment
+* Activate Virtual Environnment
 
       #conda
       $ conda activate myenv
