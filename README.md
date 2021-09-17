@@ -33,22 +33,25 @@ It draws from multiple funding information sources and uses a simple user interf
       
 * Create Virtual Environnment
 
-      #conda
+      # conda
       $ conda create -n myenv python=3.8
       
-      #venv
+      # Windows
       $ python -m venv myenv
+      
+      # Mac / Unix / WSL
+      $ virtualenv env
 
 * Activate Virtual Environnment
 
       #conda
       $ conda activate myenv
       
-      #venv (Windows)
-      $ myenv/Scripts/activate
+      # Windows
+      $ myenv/scripts/activate
       
-      #venv (Mac / Unix / WSL)
-      $ source myenv/bin/activate
+      # Mac / Unix / WSL
+      $ source env/bin/activate
       
 * Install requirements.txt
 
