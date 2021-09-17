@@ -127,9 +127,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-# Using whitenoise dependency to serve static files in prod 
+# Using whitenoise dependency to serve static files in prod w/ Django app
 # (source: http://whitenoise.evans.io/en/stable/)
-# If updates made to static files, use CMD '$ python manage.py collectstatic'to overwrite staticfiles directory
+# If updates made to static files, use CMD '$ python manage.py collectstatic'to overwrite the staticfiles directory located in main directory
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

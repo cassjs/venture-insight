@@ -1,3 +1,8 @@
+/* Using whitenoise dependency to serve static files in prod w/ Django app
+(source: http://whitenoise.evans.io/en/stable/)
+If updates made to static files, use CMD '$ python manage.py collectstatic'
+to overwrite the staticfiles directory located in main directory */
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 
