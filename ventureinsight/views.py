@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
+from ventureinsight.scraper import VentureData
 
+VentureData()
+print("")
 
-# Create your views here.
 def signup(request):
     if request.method == "POST":
         try:
