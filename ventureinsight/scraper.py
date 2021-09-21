@@ -7,7 +7,7 @@ class VentureData:
     
     # Scraped data for wefunder
     def wefunder_scrape():
-        companyname, description, highlights = ([] for i in range(4))
+        companyname, description, highlights = ([] for i in range(3))
         soup = BeautifulSoup(requests.get('https://wefunder.com/explore').text,'html.parser')
 
         for i in soup.find_all(class_='live-update-company-name'): companyname.append((i.text.replace('\n', '')).strip())
@@ -27,10 +27,12 @@ class VentureData:
         # print(website)
 
         return companyname, description, highlights
+    
+    companyname, description, highlights = wefunder_scrape()
 
     # Scraped data for seedinvest
     def seedinvest_scrape():
-        companyname, description, website, highlights = ([] for i in range(4))
+        companyname, description, highlights = ([] for i in range(3))
         soup = BeautifulSoup(requests.get('https://www.seedinvest.com/offerings').text,'html.parser')
 
         for i in soup.find_all(class_='thumbnail-title'): companyname.append((i.text.replace('\n', '')).strip())
