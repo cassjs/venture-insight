@@ -10,13 +10,16 @@ class VentureData:
         companyname, description, highlights = ([] for i in range(3))
         soup = BeautifulSoup(requests.get('https://wefunder.com/explore').text,'html.parser')
 
-        for i in soup.find_all(class_='live-update-company-name'): companyname.append((i.text.replace('\n', '')).strip())
+        for i in soup.find_all(class_='live-update-company-name'): 
+            companyname.append((i.text.replace('\n', '')).strip())
         # print(companyname)
 
-        for i in soup.find_all(class_='tagline'): description.append((i.text.replace('\n', '')).strip())
+        for i in soup.find_all(class_='tagline'): 
+            description.append((i.text.replace('\n', '')).strip())
         # print(description)
 
-        for i in soup.find_all(class_='desc-text'): highlights.append((i.text.replace('\n', '')).strip())
+        for i in soup.find_all(class_='desc-text'): 
+            highlights.append((i.text.replace('\n', '')).strip())
         # print(highlights)
 
         # TODO: Scraping for links broken
@@ -35,13 +38,16 @@ class VentureData:
         companyname, description, highlights = ([] for i in range(3))
         soup = BeautifulSoup(requests.get('https://www.seedinvest.com/offerings').text,'html.parser')
 
-        for i in soup.find_all(class_='thumbnail-title'): companyname.append((i.text.replace('\n', '')).strip())
+        for i in soup.find_all(class_='thumbnail-title'): 
+            companyname.append((i.text.replace('\n', '')).strip())
         # print(companyname)
 
-        for i in soup.find_all(class_='tagline'): description.append((i.text.replace('\n', '')).strip())
+        for i in soup.find_all(class_='tagline'): 
+            description.append((i.text.replace('\n', '')).strip())
         # print(description)
 
-        for i in soup.find_all(class_='highlights'): highlights.append((i.text.replace('\n', '')).strip())
+        for i in soup.find_all(class_='highlights'): 
+            highlights.append((i.text.replace('\n', '')).strip())
         # print(highlights)
 
         # TODO: Scraping for links broken
