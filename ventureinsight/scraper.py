@@ -4,40 +4,30 @@ import requests
 import sqlite3
 
 class VentureData:
-    ## Scrape data from wefunder
-    # def wefunder_scrape():
-    #     companyname, description, highlights = ([] for i in range(3))
-    #     soup = BeautifulSoup(requests.get('https://wefunder.com/explore').text,'html.parser')
-
-    #     for i in soup.find_all(class_='live-update-company-name'): 
-    #         companyname.append((i.text.replace('\n', '')).strip())
-    #     # print(companyname)
-
-    #     for i in soup.find_all(class_='tagline'): 
-    #         description.append((i.text.replace('\n', '')).strip())
-    #     # print(description)
-
-    #     for i in soup.find_all(class_='desc-text'): 
-    #         highlights.append((i.text.replace('\n', '')).strip())
-    #     # print(highlights)
-
-    #     # TODO: Scraping for links broken
-    #     # dom = etree.HTML(str(soup))
-    #     # res = (dom.xpath('//*[@class="company-url-bn"]/@href'))
-    #     # for i in res:
-    #     #     website.append('https://wefunder.com' + i)
-    #     # print(website)
-
-    #     return companyname, description, highlights
-
-    # companyname, description, highlights = wefunder_scrape()
-
-    ## Scrape data from seedinvest
-    def seedinvest_scrape():
-        companyname, description, highlights = ([] for i in range(3))
+    def web_scrape():
+        companyname, description, highlights, website = ([] for i in range(4))
+        
+        ## --------- WEBSITE #1 ---------
         soup = BeautifulSoup(requests.get('https://www.seedinvest.com/offerings').text,'html.parser')
 
         for i in soup.find_all(class_='thumbnail-title'): 
+            companyname.append((i.text.replace('\n', '')).strip())
+        
+        for i in soup.find_all(class_='tagline'): 
+            description.append((i.text.replace('\n', '')).strip())
+        
+        for i in soup.find_all(class_='highlights'): 
+            highlights.append((i.text.replace('\n', '')).strip())
+
+        dom = etree.HTML(str(soup))
+        res = (dom.xpath('//*[@class="thumbnail-hero-image-wrapper"]/@href'))
+        for i in res:
+            website.append('https://www.seedinvest.com' + i)
+
+        ## --------- WEBSITE #2 ---------
+        soup = BeautifulSoup(requests.get('https://wefunder.com/explore').text,'html.parser')
+
+        for i in soup.find_all(class_='live-update-company-name'): 
             companyname.append((i.text.replace('\n', '')).strip())
         # print(companyname)
 
@@ -45,29 +35,32 @@ class VentureData:
             description.append((i.text.replace('\n', '')).strip())
         # print(description)
 
-        for i in soup.find_all(class_='highlights'): 
+        for i in soup.find_all(class_='desc-text'): 
             highlights.append((i.text.replace('\n', '')).strip())
         # print(highlights)
 
-        # TODO: Scraping for links broken
-        # for i in soup.find_all(class_='thumbnail-hero-image-wrapper'): website.get('a')['href']
+        dom = etree.HTML(str(soup))
+        res = (dom.xpath('//*[@class="company-url-bn"]/@href'))
+        for i in res:
+            website.append('https://wefunder.com' + i)
         # print(website)
 
-        return companyname, description, highlights
-
-    companyname, description, highlights = seedinvest_scrape()
-
+        return companyname, description, highlights, website
+    
+    companyname, description, highlights, website = web_scrape()
+    
+    ## DATABASE CONNECTIONS
     try:
         connection = sqlite3.connect('db.sqlite3')
         cursor = connection.cursor()
         print('The database connection is open.')
 
-        cursor.execute('''CREATE TABLE IF NOT EXISTS scrapeddata(companyname UNIQUE, description TEXT, highlights TEXT)''')
+        cursor.execute('''CREATE TABLE IF NOT EXISTS scrapeddata(companyname UNIQUE, description TEXT, highlights TEXT, website TEXT)''')
         connection.commit()
         print('The scrapeddata table has been created.')
         
-        for company, description, highlights in zip(companyname, description, highlights):
-            cursor.execute(f'''INSERT OR REPLACE INTO scrapeddata VALUES("{company}", "{description}", "{highlights}")''')
+        for company, description, highlights, website in zip(companyname, description, highlights, website):
+            cursor.execute(f'''INSERT OR REPLACE INTO scrapeddata VALUES("{company}", "{description}", "{highlights}", "{website}")''')
             connection.commit()
         print('New values have been inserted into the scrapeddata table.')
             
@@ -78,7 +71,6 @@ class VentureData:
         
         ## Fetch all rows from scrapeddata table
         data = cursor.fetchall()
-        print(data)
 
     except sqlite3.Error as error:
         print('Failed to read from scrapeddata table.', error)
