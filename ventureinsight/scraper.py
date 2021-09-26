@@ -55,7 +55,7 @@ class VentureData:
         cursor = connection.cursor()
         print('The database connection is open.')
 
-        cursor.execute('''CREATE TABLE IF NOT EXISTS scrapeddata(companyname UNIQUE, description TEXT, highlights TEXT, website TEXT)''')
+        cursor.execute('''CREATE TABLE IF NOT EXISTS scrapeddata(companyname TEXT, description TEXT, highlights TEXT, website TEXT)''')
         connection.commit()
         print('The scrapeddata table has been created.')
         
@@ -63,14 +63,15 @@ class VentureData:
             cursor.execute(f'''INSERT OR REPLACE INTO scrapeddata VALUES("{company}", "{description}", "{highlights}", "{website}")''')
             connection.commit()
         print('New values have been inserted into the scrapeddata table.')
-            
-        ## Query the scrapeddata table from database
-        sqlite_select_query = '''SELECT * FROM scrapeddata;'''
-        cursor.execute(sqlite_select_query)
-        print('Querying scrapeddata table from database.')
         
-        ## Fetch all rows from scrapeddata table
-        data = cursor.fetchall()
+        # ## TEST ONLY:
+        # ## Query the scrapeddata table from database
+        # sqlite_select_query = '''SELECT * FROM scrapeddata ORDER BY companyname ASC'''
+        # cursor.execute(sqlite_select_query)
+        # print('Querying scrapeddata table from database.')
+        # ## Fetch all rows from scrapeddata table
+        # data = cursor.fetchall()
+        # print(data)
 
     except sqlite3.Error as error:
         print('Failed to read from scrapeddata table.', error)
