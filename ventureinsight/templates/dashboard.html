@@ -39,17 +39,17 @@
         </form>
     </div>
 
-  {% for row in col1 %}
+  {% for data in venture_data %}
     <div class="container pl-4 pr-4 pb-2 pt-2">
       <div class="card-group d-flex row bg-dark2">
         <div class="mb-0 p-4 col-md text-center">
-            <a href="{{ col4.0 }}" target="_blank" class="h2">{{ col1.0 }}</a>
-            <p class="text-light1">{{ col2.0 }}</p>
+            <a href="{{ data.website }}" target="_blank" class="h2">{{ data.companyname }}</a>
+            <p class="text-light1">{{ data.description }}</p>
         </div>
         <div class="mb-0 p-4 col-md">
             <p>Highlights:
               <br>
-              {{ col3.0 }}
+              {{ data.highlights }}
             </p>
         </div>
         <div class="ticker-details mb-0 p-4 col-md">
