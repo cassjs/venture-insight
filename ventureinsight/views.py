@@ -36,17 +36,25 @@ def dashboard(request):
     companyname = '''SELECT companyname FROM scrapeddata ORDER BY companyname ASC'''
     cursor.execute(companyname)
     col1 = cursor.fetchall()
-        
+
     description = '''SELECT description FROM scrapeddata'''
     cursor.execute(description)
     col2 = cursor.fetchall()
     
-    context = {'col1':col1, 'col2':col2}
+    highlights = '''SELECT highlights FROM scrapeddata'''
+    cursor.execute(highlights)
+    col3 = cursor.fetchall()
+    
+    website = '''SELECT website FROM scrapeddata'''
+    cursor.execute(website)
+    col4 = cursor.fetchall()
+    
+    context = {'col1':col1, 'col2':col2, 'col3':col3, 'col4':col4}
     
     connection.close()
     
     if request.user.is_authenticated:
-        return render(request, 'dashboard.html', context) 
+        return render(request, 'dashboard.html', context=context) 
     else :
         return redirect('/login')
 
