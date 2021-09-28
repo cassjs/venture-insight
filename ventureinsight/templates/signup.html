@@ -4,7 +4,7 @@
     <div class=centerContent>
         <div class="container1" id="container1">
             <div class="form-container sign-in-container">
-                <form method="POST" class="overlay1 formRegister" action="/ventureinsight/signup/">
+                <form method="POST" class="overlay1 formRegister" action="/signup/">
                     {% csrf_token %}
                     <h1 class="headerSpace">Start your journey</h1>
                     <input class="loginInput" type="email" placeholder="Email" name="email" />
@@ -19,7 +19,7 @@
                         <img class="logoblue" src="/static/images/logowhite.PNG" alt="logo">
                         <h1 class="headerSpace">Hello, Friend!</h1>
                         <p class="headerSpace">Already have an account?</p>
-                        <a href="/ventureinsight/login"><button class="signIn" id="signUp">Login</button></a>
+                        <a href="/login"><button class="signIn" id="signUp">Login</button></a>
                     </div>
                 </div>
             </div>

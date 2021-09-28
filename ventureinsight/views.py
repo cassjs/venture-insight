@@ -4,9 +4,6 @@ from django.contrib import auth
 
 
 # Create your views here.
-def base(request):
-    return render(request, 'base.html')  
-
 def signup(request):
     if request.method == "POST":
         try:
@@ -15,7 +12,7 @@ def signup(request):
         except User.DoesNotExist:
             user = User.objects.create_user(request.POST['email'],password=request.POST['password'])
             auth.login(request,user)
-            return redirect('/ventureinsight/login/')
+            return redirect('/login')
     else:
         return render(request, 'signup.html')  
 
@@ -24,7 +21,7 @@ def login(request):
         user = auth.authenticate(username=request.POST['email'],password = request.POST['password'])
         if user is not None:
             auth.login(request,user)
-            return redirect('/ventureinsight/dashboard')
+            return redirect('/dashboard')
         else:
             return render (request,'login.html', {'error':'Username or password is incorrect!'})
     else:
@@ -35,25 +32,25 @@ def dashboard(request):
     if request.user.is_authenticated:
         return render(request, 'dashboard.html') 
     else :
-        return redirect('/ventureinsight/login')
+        return redirect('/login')
 
 def companyinfo(request):
     if request.user.is_authenticated:
         return render(request, 'companyinfo.html')  
     else :
-        return redirect('/ventureinsight/login')
+        return redirect('/login')
 
 def profile(request):
     if request.user.is_authenticated:
         return render(request, 'profile.html', {'user' : request.user})  
     else :
-        return redirect('/ventureinsight/login')
+        return redirect('/login')
 
 def home(request):
-    return render(request, 'home.html') 
+    return render(request, 'home.html')
 
 def logout(request):
     auth.logout(request)
-    return redirect('/ventureinsight/home')
+    return redirect('/')
 
     
