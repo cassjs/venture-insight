@@ -2,9 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 from ventureinsight.scraper import VentureData
+import sqlite3
 
 VentureData()
-print("")
 
 def signup(request):
     if request.method == "POST":
@@ -28,11 +28,25 @@ def login(request):
             return render (request,'login.html', {'error':'Username or password is incorrect!'})
     else:
         return render(request, 'login.html') 
-     
 
 def dashboard(request):
+    connection = sqlite3.connect('db.sqlite3')
+    cursor = connection.cursor()
+    
+    companyname = '''SELECT companyname FROM scrapeddata ORDER BY companyname ASC'''
+    cursor.execute(companyname)
+    col1 = cursor.fetchall()
+        
+    description = '''SELECT description FROM scrapeddata'''
+    cursor.execute(description)
+    col2 = cursor.fetchall()
+    
+    context = {'col1':col1, 'col2':col2}
+    
+    connection.close()
+    
     if request.user.is_authenticated:
-        return render(request, 'dashboard.html') 
+        return render(request, 'dashboard.html', context) 
     else :
         return redirect('/login')
 
@@ -54,5 +68,3 @@ def home(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
-
-    
