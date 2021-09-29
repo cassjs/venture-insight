@@ -51,14 +51,15 @@ def dashboard(request):
     
     venture_data = []
     
-    data = {
-        'companyname': companyname, 
-        'description': description, 
-        'highlights': highlights, 
-        'website': website
-        }
+    for i in range(len(companyname)):
+        data = {
+            'companyname': companyname[i], 
+            'description': description[i], 
+            'highlights': highlights[i], 
+            'website': website[i]
+            }
 
-    venture_data.append(data)
+        venture_data.append(data)
         
     connection.close()
         
