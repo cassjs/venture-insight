@@ -33,7 +33,7 @@ def dashboard(request):
     connection = sqlite3.connect('db.sqlite3')
     cursor = connection.cursor()
     
-    col1 = '''SELECT companyname FROM scrapeddata ORDER BY companyname ASC'''
+    col1 = '''SELECT companyname FROM scrapeddata'''
     cursor.execute(col1)
     companyname = cursor.fetchall()
 
@@ -53,10 +53,10 @@ def dashboard(request):
     
     for i in range(len(companyname)):
         data = {
-            'companyname': companyname[i], 
-            'description': description[i], 
-            'highlights': highlights[i], 
-            'website': website[i]
+            'companyname': companyname[i][0], 
+            'description': description[i][0], 
+            'highlights': highlights[i][0], 
+            'website': website[i][0]
             }
 
         venture_data.append(data)

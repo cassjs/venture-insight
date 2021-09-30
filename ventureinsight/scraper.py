@@ -55,7 +55,7 @@ class VentureData:
         cursor = connection.cursor()
         print('The database connection is open.')
 
-        cursor.execute('''CREATE TABLE IF NOT EXISTS scrapeddata(companyname UNIQUE, description TEXT, highlights TEXT, website TEXT)''')
+        cursor.execute('''CREATE TABLE IF NOT EXISTS scrapeddata(companyname TEXT, description TEXT, highlights TEXT, website TEXT)''')
         connection.commit()
         print('The scrapeddata table has been created.')
         
